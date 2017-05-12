@@ -1,0 +1,226 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Art/SpriteSheets/ Spritesheet.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 30.595, 31.3507 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31.7429, 32 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BigTooth" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BigTooth"]
+
+transform/pos = Vector2( 0.155617, -0.0774593 )
+transform/scale = Vector2( 0.255867, 0.253642 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.02164, 0, 0, 1.00755, -0.727001, 0.259197 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BigTooth/StaticBody2D"]
+
+transform/pos = Vector2( -0.727001, 0.259197 )
+transform/scale = Vector2( 1.02164, 1.00755 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LittleTooth" type="Sprite" parent="."]
+
+transform/pos = Vector2( 25.8827, 0.647068 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 16, 0, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LittleTooth"]
+
+transform/pos = Vector2( 0.0342074, -0.0193972 )
+transform/scale = Vector2( 0.251701, 0.24913 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 0.375233, 0, 0, 0.328724, 21.7062, 23.4946 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LittleTooth/StaticBody2D"]
+
+transform/pos = Vector2( 21.7062, 23.4946 )
+transform/scale = Vector2( 0.375233, 0.328724 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CoreSaw" type="Sprite" parent="."]
+
+transform/pos = Vector2( 52.0512, 0.437721 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 0, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoreSaw"]
+
+transform/pos = Vector2( 0.0342074, -0.0193972 )
+transform/scale = Vector2( 0.251701, 0.24913 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1.00208, 0, 0, 1, -0.072197, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoreSaw/StaticBody2D"]
+
+transform/pos = Vector2( -0.072197, 0 )
+transform/scale = Vector2( 1.00208, 1 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CoreWood" type="Sprite" parent="."]
+
+transform/pos = Vector2( 79.9991, 0.123699 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 48, 0, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CoreWood"]
+
+transform/pos = Vector2( 0.0342074, -0.0193972 )
+transform/scale = Vector2( 0.251701, 0.24913 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1.00208, 0, 0, 1, -0.072197, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoreWood/StaticBody2D"]
+
+transform/pos = Vector2( -0.072197, 0 )
+transform/scale = Vector2( 1.00208, 1 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="OutWood" type="Sprite" parent="."]
+
+transform/pos = Vector2( 106.168, -0.294998 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 64, 0, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="OutWood"]
+
+transform/pos = Vector2( 0.0342074, -0.0193972 )
+transform/scale = Vector2( 0.251701, 0.24913 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1.00208, 0, 0, 1, -0.072197, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutWood/StaticBody2D"]
+
+transform/pos = Vector2( -0.072197, 0 )
+transform/scale = Vector2( 1.00208, 1 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="BottomWood" type="Sprite" parent="."]
+
+transform/pos = Vector2( 130.975, -0.713692 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 80, 0, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BottomWood"]
+
+transform/pos = Vector2( 0.0342074, -0.0193972 )
+transform/scale = Vector2( 0.251701, 0.24913 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 0.386685, 0, 0, 0.385315, 18.3112, 17.5543 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWood/StaticBody2D"]
+
+transform/pos = Vector2( 18.3112, 17.5543 )
+transform/scale = Vector2( 0.386685, 0.385315 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="AimSpot" type="Sprite" parent="."]
+
+transform/pos = Vector2( 155.783, -0.713692 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 96, 0, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AimSpot"]
+
+transform/pos = Vector2( 0.0342074, -0.0193972 )
+transform/scale = Vector2( 0.251701, 0.24913 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 0.3752, 0, 0, 0.359796, 21.7074, 22.4071 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AimSpot/StaticBody2D"]
+
+transform/pos = Vector2( 21.7074, 22.4071 )
+transform/scale = Vector2( 0.3752, 0.359796 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+

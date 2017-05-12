@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Tilemaps/Tilemap.xml" type="TileSet" id=1]
+[ext_resource path="res://Scripts/PlayerMovement.gd" type="Script" id=2]
+[ext_resource path="res://Art/SpriteSheets/ Spritesheet.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.72866, 2.85688 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell/size = Vector2( 16, 16 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( -589832, 5, -393211, 1, -393210, 0, -327676, 1, -327675, 0, -262141, 1, -262140, 0, -196606, 1, -196605, 0, -65555, 3, -65554, 3, -65553, 3, -65552, 4, -131071, 1, -131070, 0, -19, 3, -18, 3, -17, 3, -16, 4, -65536, 1, -65535, 0, 65517, 3, 65518, 3, 65519, 3, 65520, 4, 65526, 3, 65527, 4, 65535, 6, 0, 0, 131053, 3, 131054, 3, 131055, 3, 131056, 4, 131057, 5, 131058, 5, 131059, 5, 131060, 4, 131061, 5, 131062, 3, 131063, 4, 131068, 3, 131069, 3, 131070, 3, 131071, 0, 196589, 3, 196590, 3, 196591, 3, 196592, 3, 196593, 3, 196594, 3, 196595, 3, 196596, 4, 196597, 3, 196598, 3, 196599, 3, 196600, 3, 196601, 3, 196602, 3, 196603, 4, 196604, 3, 196605, 3, 196606, 3, 196607, 4, 262125, 3, 262126, 3, 262127, 3, 262128, 3, 262129, 3, 262130, 3, 262131, 3, 262132, 4, 262133, 3, 262134, 3, 262135, 3, 262136, 3, 262137, 3, 262138, 3, 262139, 4, 262140, 5, 262141, 5, 262142, 5, 262143, 4 )
+
+[node name="End point" type="StaticBody2D" parent="."]
+
+transform/pos = Vector2( -9.79018, 6.29369 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="EndArea" type="Area2D" parent="End point"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 6.99065, 6.99065 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End point/EndArea"]
+
+transform/pos = Vector2( 6.99065, 6.99065 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Player" type="KinematicBody2D" parent="."]
+
+transform/pos = Vector2( -272.943, -78.8402 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="Sprite" type="Sprite" parent="Player"]
+
+texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 16, 0, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+
